@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.topNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.bottomNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+}
