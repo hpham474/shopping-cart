@@ -1,3 +1,20 @@
+html,
+body {
+  min-width: 900px;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  background-color: #d1d5db;
+  height: 100%;
+  justify-items: center;
+}
+
 #error-page {
   display: flex;
   flex-direction: column;
