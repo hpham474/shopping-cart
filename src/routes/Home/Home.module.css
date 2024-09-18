@@ -1,5 +1,5 @@
 .home {
-  background-color: #d1d5db;
+  max-width: 100rem;
   padding: 2rem 3rem;
   display: grid;
   grid-template-rows: 4rem 32rem;

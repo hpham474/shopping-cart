@@ -1,7 +1,8 @@
 html,
 body {
   min-width: 900px;
-  height: 100%;
+  min-height: 100%;
+  background-color: #d1d5db;
 }
 
 body {
@@ -10,8 +11,7 @@ body {
 }
 
 #root {
-  background-color: #d1d5db;
-  height: 100%;
+  margin-bottom: 2rem;
   justify-items: center;
 }
 
