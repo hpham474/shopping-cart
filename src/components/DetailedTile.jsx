@@ -9,7 +9,8 @@ function DetailedTile({ item }) {
       </div>
       <div className={styles.content}>
         <h2 className={styles.title}>{item.title}</h2>
-        <p className={styles.price}>${item.price}</p>
+        <p className={styles.price}>${parseFloat(item.price).toFixed(2)}</p>
+        <p className={styles.description}>{item.description}</p>
       </div>
     </div>
   );

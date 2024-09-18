@@ -32,7 +32,22 @@
 }
 
 .title {
+  font-size: 1.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  box-orient: vertical;
+}
+
+.price {
   font-size: 1.5rem;
+}
+
+.description {
+  font-size: 1.25rem;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -40,8 +55,4 @@
   -webkit-box-orient: vertical;
   line-clamp: 2;
   box-orient: vertical;
-}
-
-.price {
-  font-size: 1.25rem;
 }

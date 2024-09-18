@@ -6,8 +6,18 @@ describe("MensClothing", () => {
   it("display loading state initially", () => {
     window.fetch = vi.fn(() => {
       const items = [
-        { id: 1, title: "test item 1" },
-        { id: 2, title: "test item 2" },
+        {
+          id: 1,
+          title: "test item 1",
+          price: 109.95,
+          description: "item description 1",
+        },
+        {
+          id: 2,
+          title: "test item 2",
+          price: 22.3,
+          description: "item description 1",
+        },
       ];
 
       return Promise.resolve({ json: () => Promise.resolve(items) });
@@ -21,8 +31,18 @@ describe("MensClothing", () => {
   it("display fetched data after loading", async () => {
     window.fetch = vi.fn(() => {
       const items = [
-        { id: 1, title: "test item 1" },
-        { id: 2, title: "test item 2" },
+        {
+          id: 1,
+          title: "test item 1",
+          price: 109.95,
+          description: "item description 1",
+        },
+        {
+          id: 2,
+          title: "test item 2",
+          price: 22.3,
+          description: "item description 1",
+        },
       ];
 
       return Promise.resolve({ json: () => Promise.resolve(items) });
