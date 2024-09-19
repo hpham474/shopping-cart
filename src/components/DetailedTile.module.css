@@ -36,9 +36,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-  line-clamp: 2;
+  line-clamp: 1;
   box-orient: vertical;
 }
 
@@ -51,8 +51,57 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   line-clamp: 2;
   box-orient: vertical;
+}
+
+.addToCart {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 1rem;
+}
+
+.quantityInput {
+  width: 2.5rem;
+  line-height: 2rem;
+  padding: 0 7px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.decrement,
+.increment {
+  font-size: 1.5rem;
+  height: 2rem;
+  width: 2rem;
+  background-color: transparent;
+  border: none;
+}
+
+.add {
+  height: 2rem;
+  padding: 0 0.5rem;
+  background-color: #374151;
+  font-size: 1rem;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.add:hover {
+  background-color: #2b3544;
+}
+
+.add:active {
+  background-color: #1f2937;
 }
