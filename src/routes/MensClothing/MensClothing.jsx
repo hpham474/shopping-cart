@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 import styles from "../../styles/CategoryPage.module.css";
 import DetailedTile from "../../components/DetailedTile";
 
 function MensClothing() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { cartChange } = useOutletContext();
 
   useEffect(() => {
     const fetchMensClothingItems = async () => {
@@ -33,7 +35,13 @@ function MensClothing() {
       <h2 className={styles.title}>Men&apos;s Clothing</h2>
       <div className={styles.list}>
         {items.map((item) => {
-          return <DetailedTile key={item.id} item={item}></DetailedTile>;
+          return (
+            <DetailedTile
+              key={item.id}
+              item={item}
+              cartChange={cartChange}
+            ></DetailedTile>
+          );
         })}
       </div>
     </div>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./DetailedTile.module.css";
 
-function DetailedTile({ item }) {
+function DetailedTile({ item, cartChange }) {
   const [value, setValue] = useState(1);
 
   const handleChange = (e) => {
@@ -23,10 +23,6 @@ function DetailedTile({ item }) {
   function decrement() {
     const newValue = value - 1;
     setValue(newValue);
-  }
-
-  function addToCart() {
-    console.log("add");
   }
 
   return (
@@ -61,7 +57,12 @@ function DetailedTile({ item }) {
           <button className={styles.increment} onClick={increment}>
             +
           </button>
-          <button className={styles.add} onClick={addToCart}>
+          <button
+            className={styles.add}
+            onClick={() => {
+              cartChange(item, value);
+            }}
+          >
             Add to Cart
           </button>
         </div>
@@ -72,6 +73,7 @@ function DetailedTile({ item }) {
 
 DetailedTile.propTypes = {
   item: PropTypes.object.isRequired,
+  cartChange: PropTypes.func.isRequired,
 };
 
 export default DetailedTile;
