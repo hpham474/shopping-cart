@@ -9,7 +9,7 @@ function App() {
 
   function cartChange(item, quantity) {
     const itemIndex = alreadyInCart(item);
-    const newCart = cart;
+    const newCart = [...cart];
     if (itemIndex === -1) {
       newCart.push({
         item: item,
@@ -22,9 +22,20 @@ function App() {
     setCart(newCart);
   }
 
+  function cartRemove(item) {
+    const itemIndex = alreadyInCart(item);
+    if (itemIndex != -1) {
+      const newCart = [
+        ...cart.slice(0, itemIndex),
+        ...cart.slice(itemIndex + 1),
+      ];
+      setCart(newCart);
+    }
+  }
+
   function alreadyInCart(item) {
     for (let i = 0; i < cart.length; i++) {
-      if (cart.item.id === item.id) {
+      if (cart[i].item.id === item.id) {
         return i;
       }
     }
@@ -34,7 +45,7 @@ function App() {
   return (
     <>
       <NavBar></NavBar>
-      <Outlet context={{ cart, cartChange }}></Outlet>
+      <Outlet context={{ cart, cartChange, cartRemove }}></Outlet>
     </>
   );
 }

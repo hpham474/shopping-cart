@@ -21,6 +21,7 @@ vi.mock("react-router-dom", async () => {
         { item: { id: 2, name: "Item B" }, quantity: 1 },
       ],
       cartChange: vi.fn(),
+      cartRemove: vi.fn(),
     }),
   };
 });

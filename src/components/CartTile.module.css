@@ -1,0 +1,127 @@
+.tile {
+  padding: 1rem;
+  background-color: white;
+  width: 100%;
+  height: 15rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
+  position: relative;
+
+  border-radius: 1rem;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.image {
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 5fr 1fr 1fr;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  line-clamp: 4;
+  box-orient: vertical;
+}
+
+.price {
+  font-size: 1.5rem;
+  place-self: center;
+}
+
+.description {
+  font-size: 1.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  box-orient: vertical;
+}
+
+.addToCart {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 1rem;
+}
+
+.quantityInput {
+  width: 2.5rem;
+  line-height: 2rem;
+  padding: 0 7px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.decrement,
+.increment {
+  font-size: 1.5rem;
+  height: 2rem;
+  width: 2rem;
+  background-color: transparent;
+  border: none;
+}
+
+.updateButton {
+  height: 3rem;
+  padding: 0 0.5rem;
+  background-color: #374151;
+  font-size: 1rem;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.updateButton:hover {
+  background-color: #2b3544;
+}
+
+.updateButton:active {
+  background-color: #1f2937;
+}
+
+.remove {
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0.25rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #ef4444;
+  border: none;
+  border-radius: 1.25rem;
+}
+
+.remove:hover {
+  background: #dc2626;
+}
+
+.remove:active {
+  background: #b91c1c;
+}

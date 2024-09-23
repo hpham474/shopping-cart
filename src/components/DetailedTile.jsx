@@ -17,6 +17,7 @@ function DetailedTile({ item, cartChange }) {
 
   function increment() {
     const newValue = value + 1;
+    console.log(newValue);
     setValue(newValue);
   }
 
