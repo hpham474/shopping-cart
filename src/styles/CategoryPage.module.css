@@ -1,6 +1,6 @@
 .content {
   max-width: 100rem;
-  width: 100%;
+  width: 100vw;
   padding: 2rem 3rem;
   display: grid;
   grid-template-rows: auto 1fr;

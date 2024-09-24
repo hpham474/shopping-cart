@@ -13,6 +13,7 @@
 }
 
 .image {
+  min-width: 12rem;
   grid-row: 1 / 2;
   display: flex;
   justify-content: center;

@@ -1,5 +1,6 @@
 .home {
   max-width: 100rem;
+  width: 100%;
   padding: 2rem 3rem;
   display: grid;
   grid-template-rows: 4rem 32rem;
@@ -39,7 +40,8 @@
 }
 
 .section {
-  width: clamp(40rem, calc(100vw - 6rem), 100rem);
+  padding: 0 2rem;
+  min-width: clamp(40rem, calc(100vw - 6rem), 94rem);
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -50,4 +52,11 @@
   margin-top: 5rem;
   font-size: 4rem;
   text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .section {
+    flex-direction: column;
+    align-items: center;
+  }
 }
