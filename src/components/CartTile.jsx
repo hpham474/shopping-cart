@@ -6,6 +6,7 @@ import { mdiTrashCanOutline } from "@mdi/js";
 
 function CartTile({ item, cart, cartChange, cartRemove }) {
   const [value, setValue] = useState(cart[getIndex(item)].quantity);
+  const [exit, setExit] = useState(false);
 
   const handleChange = (e) => {
     let quantityValue = e.target.value.replace(/\D/g, "");
@@ -45,11 +46,14 @@ function CartTile({ item, cart, cartChange, cartRemove }) {
   }
 
   function remove() {
-    cartRemove(item);
+    setExit(true); // Trigger the exit animation
+    setTimeout(() => {
+      cartRemove(item); // Remove the item from the cart after animation
+    }, 500);
   }
 
   return (
-    <div className={styles.tile}>
+    <div className={`${styles.tile} ${exit ? styles.exit : ""}`}>
       <div className={styles.image}>
         <img src={item.image} className={styles.img}></img>
       </div>

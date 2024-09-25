@@ -1,6 +1,6 @@
 import { vi, describe, it, expect } from "vitest";
 import { useOutletContext } from "react-router-dom";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Cart from "./Cart";
 
@@ -113,7 +113,7 @@ describe("Cart", () => {
       cartRemove: cartRemove,
     });
 
-    const { rerender } = render(<Cart />);
+    render(<Cart />);
 
     const item1 = screen.queryByText(/Item A/i);
     const item2 = screen.queryByText(/Item B/i);
@@ -124,9 +124,9 @@ describe("Cart", () => {
     const removeButtons = screen.getAllByRole("button", { name: /remove/i });
     await userEvent.click(removeButtons[0]);
 
-    rerender(<Cart />);
-
-    expect(item1).not.toBeInTheDocument();
-    expect(item2).toBeInTheDocument();
+    waitFor(() => {
+      expect(item1).not.toBeInTheDocument();
+      expect(item2).toBeInTheDocument();
+    });
   });
 });
