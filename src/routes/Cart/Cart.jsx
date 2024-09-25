@@ -3,7 +3,7 @@ import CartTile from "../../components/CartTile";
 import styles from "./Cart.module.css/";
 
 function Cart() {
-  const { cart, cartChange, cartRemove } = useOutletContext();
+  const { cart, cartChange, cartRemove, checkOut } = useOutletContext();
 
   function isEmpty() {
     if (cart.length === 0) {
@@ -45,7 +45,9 @@ function Cart() {
             <div className={styles.price}>
               Total: ${parseFloat(totalPrice()).toFixed(2)}
             </div>
-            <button className={styles.checkOutButton}>Check Out</button>
+            <button className={styles.checkOutButton} onClick={checkOut}>
+              Check Out
+            </button>
           </div>
         </div>
       </div>
